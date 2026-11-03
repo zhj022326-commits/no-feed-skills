@@ -1,6 +1,6 @@
 # no-feed-skills
 
-本仓库收录十一个可独立调用的 Agent Skills。
+本仓库收录十二个可独立调用的 Agent Skills。
 
 ## Skill 列表
 
@@ -58,6 +58,12 @@
 
 目录：[`skills/thinking-mistake-notebook/`](skills/thinking-mistake-notebook/)
 
+### strong-personality
+
+《强者人格》以“始终站在自己一边，同时尊重事实”为核心，独立审查用户叙事、拆解混乱概念，并围绕现实利益、资源和行动空间给出明确回应。
+
+目录：[`skills/strong-personality/`](skills/strong-personality/)
+
 ### video-interactive-learning（完整版）
 
 把抖音、B站、YouTube 等视频链接转换成学习材料：优先取得字幕，没有字幕时进行语音识别，语音失败后只抽帧一次救稿，然后整理知识并立即开始互动学习。
@@ -83,7 +89,7 @@
 
 ## 安装
 
-以下命令显式指定安装目标，适合终端、脚本和无终端的 AI 后台任务。只需要某一个 Skill 时，不要使用 `--all`：它会安装仓库中的全部十一个 Skills。
+以下命令显式指定安装目标，适合终端、脚本和无终端的 AI 后台任务。只需要某一个 Skill 时，不要使用 `--all`：它会安装仓库中的全部十二个 Skills。
 
 安装本仓库中的全部 Skills 到安装工具支持的全部 Agent：
 
@@ -95,6 +101,12 @@ npx -y skills add zhj022326-commits/no-feed-skills -g --all
 
 ```bash
 npx -y skills add zhj022326-commits/no-feed-skills --skill thinking-mistake-notebook --agent "*" -g
+```
+
+只安装《强者人格》：
+
+```bash
+npx -y skills add zhj022326-commits/no-feed-skills --skill strong-personality --agent "*" -g
 ```
 
 只安装信息流学习机完整版：
@@ -136,6 +148,7 @@ git clone --depth 1 https://github.com/zhj022326-commits/no-feed-skills.git
 - 生成或检查情绪修辞角度：使用 `$eight-emotions-four-uses`。
 - 把已有内容改得更有道德情绪传播力：使用 `$moral-emotion`。
 - 通过情境实验观察并复盘错误认知：使用 `$thinking-mistake-notebook`。
+- 以强者人格独立审查叙事、分析现实并维护主体性：使用 `$strong-personality`。
 - 宿主需要自行提取视频文字稿时：使用完整版 `$video-interactive-learning`。
 - 豆包等宿主已经能直接取得完整视频文字稿时：使用轻量版 `$video-interactive-learning-lite`。
 
