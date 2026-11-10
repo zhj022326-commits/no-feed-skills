@@ -1,0 +1,4 @@
+interface:
+  display_name: "manuscript-diagnostic（稿件综合诊断）"
+  short_description: "基于内容生产综合模型，对完整或局部稿件识别方法、评价传播效果并提出有原文依据的调整建议"
+  default_prompt: "使用 $manuscript-diagnostic 诊断我提供的稿件，引用原文证据并给出优先级明确的调整建议。"
