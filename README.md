@@ -1,6 +1,6 @@
 # no-feed-skills
 
-本仓库收录十三个可独立调用的 Agent Skills。
+本仓库收录十四个可独立调用的 Agent Skills。
 
 ## Skill 列表
 
@@ -39,6 +39,12 @@
 依据《内容生产综合模型》诊断完整或局部稿件，识别实际使用的方法、评价文本效果，并用原文证据提出调整建议。默认交付诊断报告，不整篇改写稿件。
 
 目录：[`skills/manuscript-diagnostic/`](skills/manuscript-diagnostic/)
+
+### ai-logic-review
+
+依据六类固定判例审查 AI 回答、评论、分析或论证中的可确认逻辑偏离，逐条列出原文证据和逻辑关系；不做事实裁决、立场评价、反驳、改写或建议。
+
+目录：[`skills/ai-logic-review/`](skills/ai-logic-review/)
 
 ### interactive-learning
 
@@ -95,7 +101,7 @@
 
 ## 安装
 
-以下命令显式指定安装目标，适合终端、脚本和无终端的 AI 后台任务。只需要某一个 Skill 时，不要使用 `--all`：它会安装仓库中的全部十三个 Skills。
+以下命令显式指定安装目标，适合终端、脚本和无终端的 AI 后台任务。只需要某一个 Skill 时，不要使用 `--all`：它会安装仓库中的全部十四个 Skills。
 
 安装本仓库中的全部 Skills 到安装工具支持的全部 Agent：
 
@@ -119,6 +125,12 @@ npx -y skills add zhj022326-commits/no-feed-skills --skill strong-personality --
 
 ```bash
 npx -y skills add zhj022326-commits/no-feed-skills --skill manuscript-diagnostic --agent "*" -g
+```
+
+只安装《AI 逻辑审查》：
+
+```bash
+npx -y skills add zhj022326-commits/no-feed-skills --skill ai-logic-review --agent "*" -g
 ```
 
 只安装信息流学习机完整版：
@@ -157,6 +169,7 @@ git clone --depth 1 https://github.com/zhj022326-commits/no-feed-skills.git
 - 检查文案是否误伤目标观众：使用 `$three-part-method`。
 - 评估开口、寻找理论或把观点变成开口：使用 `$content-production`。
 - 按《内容生产综合模型》诊断稿件：使用 `$manuscript-diagnostic`。
+- 按六类固定判例审查 AI 文本中的可确认逻辑偏离：使用 `$ai-logic-review`。
 - 立即开始互动学习：使用 `$interactive-learning`。
 - 生成或检查情绪修辞角度：使用 `$eight-emotions-four-uses`。
 - 把已有内容改得更有道德情绪传播力：使用 `$moral-emotion`。
@@ -168,6 +181,7 @@ git clone --depth 1 https://github.com/zhj022326-commits/no-feed-skills.git
 ## 运行依赖
 
 - 支持 Agent Skills 的客户端
+- `ai-logic-review` 无额外运行依赖；输入中必须包含待审 AI 文本，需要确认跨样本偏差时还应提供可比回答。
 - `manuscript-diagnostic` 无额外运行依赖；包内同时提供理论 DOCX 原件及可检索的 Markdown。更新理论副本时可使用 PowerShell 运行 `scripts/extract-theory.ps1`。
 - `video-interactive-learning` 需要 Python 3.10+ 或 uv、网络和文件读写能力；首次语音识别会下载模型。
 - `video-interactive-learning-lite` 不携带代码或依赖，但宿主必须原生支持从视频链接取得完整文字稿。

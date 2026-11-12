@@ -1,0 +1,4 @@
+interface:
+  display_name: "ai-logic-review（AI 逻辑审查）"
+  short_description: "依据六类固定判例审查 AI 文本中的可确认逻辑偏离"
+  default_prompt: "使用 $ai-logic-review 审查我提供的 AI 文本，只按固定格式列出可确认命中。"
